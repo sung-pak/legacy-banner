@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--<script src="http://cdn.creative.medialytics.com/javascript/servo-rich-media.js"></script>-->
+	<!--<script src="servo.config.js"></script>-->
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+	<div id="container">
+
+		<div id="mainContainer">
+
+			<div id="baseContainer">
+
+				<div id='mainBG'>
+
+					<img src="images/bg.jpg" alt="" id="bg">
+					<!-- images/bg_sprite.jpg -->
+					<div id="bgimgholder"><img class="bsprite anim" src="images/bg_sprite.jpg" alt="" id="bgs"></div>
+
+					<div id="bgfix"><img src="images/bg_groundcover.png" alt=""></div>
+
+					<div id="carContainer">
+						<div class='main-car'><img src="images/car_blue_initial.png" alt="" id="initialcar"></div>
+							<div class='wheels'>
+								<ul>
+									<li id="wheelFront"><img src="images/hub_1.png"/></li>
+									<li id="wheelRear"><img src="images/hub_2.png"/></li>
+								</ul>
+							</div>
+						</div>
+				</div>
+
+				<div id="clickScreen"></div>
+
+				<div id='txt1'>
+					<img src="images/txt1.png" alt="" id="linkheadline" />
+				</div>
+
+				<div id="txt2" class='hide'><img src="images/txt2.png" alt="" id="linkchoose"></div>
+				<div id="txt3" class='hide'><img src="images/legal.png" alt="" id="linkoptions"></div>
+				<div id="txt4" class='hide'><img src="images/tag.png" alt="" id="linkcorolla"></div>
+				<div id="logo" class='hide'><img src="images/logo.png" alt="" id="linklogo"></div>
+				<div id="colortxt" class='hide'><img id="colortxtimg" src="images/txt_colors.png" alt=""></div>
+
+				<div id="deadspot"></div>
+
+				<div id="nav" >
+					<ul>
+						<li><a href="javascript:void(0);" id="button1" class='hide' ><img src="images/swatch_1.png" ></a></li>
+						<li><a href="javascript:void(0);" id="button2" class='hide' ><img src="images/swatch_2.png" ></a></li>
+						<li><a href="javascript:void(0);" id="button3" class='hide' ><img src="images/swatch_3.png" ></a></li>
+						<li><a href="javascript:void(0);" id="button4" class='hide' ><img src="images/swatch_4.png" ></a></li>
+						<li><a href="javascript:void(0);" id="button5" class='hide' ><img src="images/swatch_5.png" ></a></li>
+						<li><a href="javascript:void(0);" id="button6" class='hide' ><img src="images/swatch_6.png" ></a></li>
+					</ul>
+				</div>
+
+				<div id="cta" class='hide'>
+						<img src="images/cta.png" alt="" class='mainBtn' id="linkcta">
+				</div>
+
+			</div>
+			<!--
+			<div id='preLoader' class="loader init"><span class="circle"></span><span class="circle"></span><span class="circle"></span></div>
+			-->
+			<div id='preLoader'></div>
+
+		</div>
+
+	</div>
+
+
+
+<script src="main.js"></script>
+
+</body>
+</html>

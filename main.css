@@ -1,0 +1,434 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #333;
+}
+
+img {
+	border: 0;
+}
+
+#container {
+	position: absolute;
+	background-color: transparent!important;
+	width: 320px;
+	height: 416px;
+	top:50%;
+	left:50%;
+	margin:-208px 0 0 -160px;
+}
+
+#mainContainer {
+	width: 320px;
+	height: 416px;
+	overflow:hidden;
+}
+
+#baseContainer {
+	width: 320px;
+	height: 416px;
+	position: relative; display:none;
+}
+#baseContainer.commence{display:block; }
+
+#mainBG,
+#txt1,
+#carContainer,
+#wheelFront,
+#wheelRear{display:none;}
+
+#baseContainer.commence #mainBG{
+	position:absolute; height:832px; display:block;
+					transform:translate3d(0,-416px,0);
+	-webkit-transform:translate3d(0,-416px,0);
+
+					animation:bgMoveY 2.3s ease-out forwards;
+	-webkit-animation:bgMoveY 2.3s ease-out forwards;
+}
+
+	@-webkit-keyframes bgMoveY{
+		from {-webkit-transform:translate3d(0,0,0) translateZ(0); }
+		to{-webkit-transform:translate3d(0,-416px,0) translateZ(0); }
+	}
+
+	@keyframes bgMoveY{
+		from {transform:translate3d(0,0,0) translateZ(0); }
+		to{transform:translate3d(0,-416px,0) translateZ(0); }
+	}
+
+#baseContainer.commence #txt1{
+	width:261px; height:24px; display:block;
+	position:absolute; cursor: pointer;
+
+	-webkit-transform:translate3d(30px,28px,0);
+	transform:translate3d(30px,28px,0);
+
+	-webkit-animation:txt_1 1.6s ease-out forwards;
+	animation:txt_1 1.6s ease-out forwards;
+}
+
+	@-webkit-keyframes txt_1{
+		from {-webkit-transform: translate3d(30px,320px,0) translateZ(0); opacity:0; }
+		to{-webkit-transform: translate3d(30px,28px,0) translateZ(0); opacity:1; }
+	}
+
+	@keyframes txt_1{
+		from {transform: translate3d(30px,320px,0) translateZ(0); opacity:0; }
+		to{transform: translate3d(30px,28px,0) translateZ(0); opacity:1; }
+	}
+
+#baseContainer.commence #carContainer {
+	display:block; 	position: absolute;
+	width: 300px; height: 141px;
+	left:10px; top:523px;
+}
+
+#baseContainer.commence.anim #carContainer {
+	left:10px; top:0px;
+	-webkit-transform:translate3d(0,523px,0);
+	transform:translate3d(0,523px,0);
+
+	-webkit-transform:translate3d(0,523px,0);
+	transform:translate3d(0,523px,0);
+
+	-webkit-animation:mycarXY 1.8s .2s ease-out forwards;
+	animation:mycarXY 1.8s .2s ease-out forwards;
+
+	pointer-events: none;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mycarXY {
+	
+    from {-webkit-transform: translate3d(50px,523px,0px) scale(.8); transform-style:preserve-3d;}
+    to {-webkit-transform: translate3d(0,523px,0px) scale(1); transform-style:preserve-3d;}
+}
+
+/* Standard syntax */
+@keyframes mycarXY {
+	
+	from {transform: translate3d(50px,523px,0px) scale(.8); transform-style:preserve-3d;}
+	to {transform: translate3d(0,523px,0px) scale(1); transform-style:preserve-3d;}
+}
+
+#carContainer .main-car,
+#carContainer .car-lights,
+#carContainer .wheels{
+	position:absolute; width:100%;
+}
+
+#carContainer .wheels li img{ width:100%; height:100%; }
+
+/* front wheel */
+#baseContainer.commence.anim #wheelFront{
+
+	list-style:none; position:absolute; display:block;
+	 width:56px; height:56px; right:67px; top:71px;
+
+	-webkit-transform:rotate3d(0,1,0,68deg) rotate(-53deg) translate3d(0,0,0);
+	transform:rotate3d(0,1,0,68deg) rotate(-53deg) translate3d(0,0,0);
+
+	-webkit-animation:myFrontWheel 1.8s .2s ease-out forwards;
+	animation:myFrontWheel 1.8s .2s ease-out forwards;
+}
+
+/* rear wheel */
+#baseContainer.commence.anim #wheelRear{
+
+	list-style:none; position:absolute; display:block;
+	width:34px; height:34px; right:6px; top:72px;
+
+	-webkit-transform:rotate3d(0,1,0,75deg) rotate(-98deg) translate3d(0,0,0);
+	transform:rotate3d(0,1,0,75deg) rotate(-98deg) translate3d(0,0,0);
+
+	-webkit-animation:myRearWheel 1.8s .2s ease-out forwards;
+	animation:myRearWheel 1.8s .2s ease-out forwards;
+}
+
+	@-webkit-keyframes myFrontWheel{
+		from { -webkit-transform: rotate3d(0,1,0,68deg) rotate(0deg) translate3d(0,0,0); opacity:1; }
+		to { -webkit-transform: rotate3d(0,1,0,68deg) rotate(-53deg) translate3d(0,0,0); opacity:1; }
+	}
+
+	@keyframes myFrontWheel{
+		from { transform: rotate3d(0,1,0,68deg) rotate(0deg) translate3d(0,0,0); opacity:1; }
+		to { transform: rotate3d(0,1,0,68deg) rotate(-53deg) translate3d(0,0,0); opacity:1; }
+	}
+
+
+	@-webkit-keyframes myRearWheel{
+		from { -webkit-transform: rotate3d(0,1,0,75deg) rotate(0deg) translate3d(0,0,0); opacity:1; }
+		to { -webkit-transform: rotate3d(0,1,0,75deg) rotate(-98deg) translate3d(0,0,0); opacity:1; }
+	}
+
+	@keyframes myRearWheel{
+		from { transform: rotate3d(0,1,0,75deg) rotate(0deg) translate3d(0,0,0); opacity:1; }
+		to { transform: rotate3d(0,1,0,75deg) rotate(-98deg) translate3d(0,0,0); opacity:1; }
+	}
+
+#clickScreen {
+	position: absolute; top:104px; left:20px; width:280px; height: 141px; z-index: 999;
+	cursor: pointer;
+	/*background-color: rgba(255,0,0,.6);*/
+}
+
+#nav {
+	position: absolute; top:289px; left:38px; display:block; z-index: 10;
+}
+#nav.hide{display:none;}
+
+#nav li {
+	list-style:none; position:relative;
+	display:inline-block; height: 34px; width: 34px;
+	padding: 0 1px; margin: 0; cursor: pointer;
+	/* position: absolute;  */
+}
+#nav ul{margin:0; padding:0;}
+
+#nav li a{
+	position:absolute;
+
+	border: 4px solid rgba(255,255,255,0);
+  border-radius: 32px;
+  box-shadow: 0 0 2px rgba(255,255,255,0);
+  height: 33px;
+  width: 33px;
+	display:block;
+
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+
+	-webkit-animation:btnAnim_1 .3s ease-out forwards;
+	animation:btnAnim_1 .3s ease-out forwards;
+
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+#nav li a.hide{display:none;}
+#nav li a.appear{display:block;}
+
+	@-webkit-keyframes btnAnim_1{
+		from {-webkit-transform: scale(0.3,0.3)  translate3d(0,0,0) translateZ(0);}
+		to{-webkit-transform: scale(1,1)  translate3d(0,0,0) translateZ(0);}
+	}
+
+	@keyframes btnAnim_1{
+		from {transform: scale(0.3,0.3)  translate3d(0,0,0) translateZ(0);}
+		to{transform: scale(1,1)  translate3d(0,0,0) translateZ(0);}
+	}
+
+#nav li a.active {
+	border: 4px solid #FFF;
+  border-radius: 32px;
+  box-shadow: 0 0 2px #888;
+  height: 33px;
+  width: 32px;
+
+	transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+
+	-webkit-animation:myRoundBtn .2s ease-out forwards;
+	animation:myRoundBtn .2s ease-out forwards;
+}
+	@keyframes myRoundBtn{
+		from { transform: rotate(0deg); }
+		to { transform: rotate(45deg); }
+	}
+	@-webkit-keyframes myRoundBtn{
+		from { -webkit-transform: rotate(0deg); }
+		to { -webkit-transform: rotate(45deg); }
+	}
+
+
+#cta {
+	position: absolute;
+	top: 336px;
+	left: 87px;
+	cursor: pointer;
+}
+
+/* NEW LOADER */
+
+/* change font size to change size */
+
+.loader {
+  font-size: 8px;
+  position: absolute;
+  width: 4em;
+  height: 1em;
+  top: 53px;
+	left: 150px;
+}
+
+.dot {
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: #3bb6f7;
+  position: absolute;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+	animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.dot1, .dot2 {
+  left: 0;
+}
+
+.dot3 { left: 1.5em; }
+
+.dot4 { left: 3em; }
+
+@-webkit-keyframes reveal {
+  from { -webkit-transform: scale(0.001); }
+  to { -webkit-transform: scale(1); }
+}
+
+@keyframes reveal {
+  from { transform: scale(0.001); }
+  to { transform: scale(1); }
+}
+
+@-webkit-keyframes slide {
+  to { -webkit-transform: translateX(1.5em) }
+}
+
+@keyframes slide {
+  to { transform: translateX(1.5em) }
+}
+
+
+.dot1 {
+  -webkit-animation-name: reveal;
+	animation-name: reveal;
+}
+
+.dot2, .dot3 {
+  -webkit-animation-name: slide;
+	animation-name: slide;
+}
+
+.dot4 {
+  -webkit-animation-name: reveal;
+  -webkit-animation-direction: reverse; /* thx @HugoGiraudel */
+	animation-name: reveal;
+  animation-direction: reverse; /* thx @HugoGiraudel */
+}
+
+/* CHILD */
+			  @keyframes fade_in { from { opacity:0; } to { opacity:1; }  }
+@-webkit-keyframes fade_in { from { opacity:0; } to { opacity:1; }  }
+
+.ccontainer { width: 300px; height: 300px; }
+
+.cimageholder { position: absolute; top: 0px; left: 0px; }
+
+.cimage {
+	opacity: 0;
+	-webkit-backface-visibility: hidden;
+}
+
+.cspriteholder {
+	position: absolute;
+	width: 320px;
+	height: 278px;
+	top: -108px;
+	left: -10px;
+	overflow: hidden;
+}
+
+.csprite {
+	position: relative;
+}
+
+.bsprite {
+	position: relative;
+}
+
+#txt2 {
+	position: absolute;
+	top: 252px;
+	left: 67px;
+	/*cursor: pointer;*/
+}
+
+#txt3 {
+	position: absolute;
+	top: 356px;
+	left: -1px;
+	cursor: pointer;
+}
+
+#txt4 {
+	position: absolute;
+	top: 391px;
+	left: 10px;
+	cursor: pointer;
+}
+
+#logo {
+	position: absolute;
+	top: 378px;
+	right: 11px;
+	cursor: pointer;
+}
+
+#colortxt {
+	position: absolute;
+	top: 271px;
+	left: 58px;
+	overflow: hidden;
+	width: 200px;
+	height: 20px;
+}
+
+#colortxtimg {
+	position: relative;
+	top: -80px;
+	/*cursor: pointer;*/
+}
+
+#bgimgholder {
+	position: absolute;
+	top: 416px;
+	left: 0px;
+	width: 320px;
+	height: 240px;
+	overflow: hidden;
+	display: none;
+}
+
+#bg {
+	cursor: pointer;
+}
+
+#bgs {
+	cursor: pointer;
+}
+
+#bgfix {
+	position: absolute;
+	top: 620px;
+	left: 164px;
+}
+
+#deadspot {
+	width: 300px;
+	height: 86px;
+	position: absolute;
+	top: 252px;
+	left: 10px;
+	cursor: default;
+	/*background-color: rgba(255,0,0,.6);*/
+}
+
+.hide{ display:none; }
+
+.disappear{ opacity:0 }
